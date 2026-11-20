@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Integración numérica · Rectángulos y Trapecios</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind se usa para la estructura; los colores están en css/estilos.css -->
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<!-- Distribución del boceto: Título arriba · Datos | Resolución · Gráfica abajo (todo en una pantalla, sin scroll) -->
+<body class="cuerpo flex min-h-screen flex-col antialiased xl:h-[100dvh] xl:overflow-hidden">
+
+  <!-- TÍTULO -->
+  <header class="encabezado flex shrink-0 items-baseline gap-3 px-5 py-2.5">
+    <h1 class="titulo text-lg font-extrabold">Integración numérica</h1>
+    <p class="subtitulo text-sm">Rectángulos y trapecios, paso a paso</p>
+  </header>
+
+  <main class="grid min-h-0 flex-1 gap-3 p-3 xl:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] xl:grid-rows-[minmax(0,1.15fr)_minmax(0,1fr)]">
+
+    <!-- 1. DATOS -->
+    <section class="card flex min-h-0 flex-col">
+      <h2 class="seccion-titulo flex shrink-0 items-center gap-2 font-bold"><span class="num">1</span>Datos</h2>
+      <form id="form" class="mt-3 grid grid-cols-6 gap-2">
+        <label class="lbl col-span-6">Función f(x)
+          <input id="fx" value="-x^2+4" autocomplete="off" class="inp mate" placeholder="ej: x^2 + 3x - sin(x)">
+        </label>
+        <label class="lbl col-span-2">Límite a
+          <input id="a" value="-2" autocomplete="off" class="inp mate">
+        </label>
+        <label class="lbl col-span-2">Límite b
+          <input id="b" value="2" autocomplete="off" class="inp mate">
+        </label>
+        <label class="lbl col-span-2">n (1–10)
+          <input id="n" type="number" min="1" max="10" value="4" class="inp">
+        </label>
+        <label class="lbl col-span-4">Altura de los rectángulos
+          <select id="tipo" class="inp">
+            <option value="min">Altura menor (inscritos)</option>
+            <option value="max">Altura mayor (circunscritos)</option>
+            <option value="izq">Extremo izquierdo</option>
+            <option value="der">Extremo derecho</option>
+            <option value="med">Punto medio</option>
+          </select>
+        </label>
+        <div class="col-span-2 flex items-end"><button class="btn">Calcular</button></div>
+      </form>
+      <div class="mt-3 flex flex-wrap items-center gap-1.5">
+        <button type="button" class="chip mate" data-ej="-x^2+4|-2|2|4">−x²+4</button>
+        <button type="button" class="chip mate" data-ej="x^2|0|1|10">x²</button>
+        <button type="button" class="chip mate" data-ej="sin(x)|0|pi|8">sen(x)</button>
+        <button type="button" class="chip mate" data-ej="sqrt(x)|0|4|8">√x</button>
+        <button type="button" class="chip mate" data-ej="x^3-3x|-2|2|10">x³−3x</button>
+      </div>
+      <p id="nota" class="nota mt-2 text-[11px] leading-tight">Usa x, + − * / ^ ( ), pi, e, sin, cos, tan, exp, ln, log, sqrt, abs.</p>
+      <p id="error" class="aviso mt-2 hidden rounded-lg px-3 py-1.5 text-xs"></p>
+    </section>
+
+    <!-- 2. RESOLUCIÓN -->
+    <section class="card flex min-h-0 flex-col">
+      <h2 class="seccion-titulo flex shrink-0 items-center gap-2 font-bold"><span class="num">2</span>Resolución</h2>
+      <div id="res" class="mt-3 flex min-h-0 flex-1 flex-col gap-3"></div>
+    </section>
+
+    <!-- 3. GRÁFICA (ancho completo, abajo) -->
+    <section class="card flex min-h-0 flex-col xl:col-span-2">
+      <h2 class="seccion-titulo flex shrink-0 items-center gap-2 font-bold"><span class="num">3</span>Gráfica</h2>
+      <div id="graf" class="mt-3 grid min-h-0 flex-1 gap-3 xl:grid-cols-2 xl:grid-rows-[minmax(0,1fr)]"></div>
+    </section>
+  </main>
+
+  <script src="calculos.js"></script>
+  <script src="vista.js"></script>
+</body>
+</html>
