@@ -15,13 +15,26 @@
   --curva: #e6ecf4;
   --rejilla: #232d3b;
   --eje: #5b687b;
+
+  /* ----- Alturas (cámbialas aquí) ----- */
+  --alto-titulo: 4.5rem;    /* barra del título */
+  --min-datos: 21rem;       /* fila de Datos + Resolución */
+  --min-grafica: 17rem;     /* fila de la Gráfica */
 }
 html { background: var(--bg); }
 .cuerpo { background: radial-gradient(1200px 600px at 20% -10%, #18202c 0%, var(--bg) 60%); color: var(--texto); }
-.encabezado { background: linear-gradient(90deg, #131a24, #1b2534); border-bottom: 1px solid var(--borde); }
+.encabezado { min-height: var(--alto-titulo); background: linear-gradient(90deg, #131a24, #1b2534); border-bottom: 1px solid var(--borde); }
 .titulo { color: #e8eef6; letter-spacing: .2px; }
 .subtitulo, .suave { color: var(--suave); }
 .nota { color: #5f6b7d; }
+
+/* ----- Distribución principal (pantallas grandes) ----- */
+@media (min-width: 1280px) {
+  .principal {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    grid-template-rows: minmax(var(--min-datos), 1.15fr) minmax(var(--min-grafica), 1fr);
+  }
+}
 
 /* ----- Tarjetas y formulario ----- */
 .card { background: var(--panel); border: 1px solid var(--borde); border-radius: 1rem; padding: 1rem; box-shadow: 0 12px 32px rgba(0,0,0,.35); }

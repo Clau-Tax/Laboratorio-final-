@@ -8,16 +8,16 @@
   <!-- Tailwind se usa para la estructura; los colores están en css/estilos.css -->
   <link rel="stylesheet" href="estilos.css">
 </head>
-<!-- Distribución del boceto: Título arriba · Datos | Resolución · Gráfica abajo (todo en una pantalla, sin scroll) -->
-<body class="cuerpo flex min-h-screen flex-col antialiased xl:h-[100dvh] xl:overflow-hidden">
+<!-- Distribución del boceto: Título arriba · Datos | Resolución · Gráfica abajo. Las alturas se cambian en css/estilos.css (variables del inicio) -->
+<body class="cuerpo flex min-h-screen flex-col antialiased">
 
   <!-- TÍTULO -->
-  <header class="encabezado flex shrink-0 items-baseline gap-3 px-5 py-2.5">
-    <h1 class="titulo text-lg font-extrabold">Integración numérica</h1>
-    <p class="subtitulo text-sm">Rectángulos y trapecios, paso a paso</p>
+  <header class="encabezado flex shrink-0 items-center gap-4 px-6">
+    <h1 class="titulo text-2xl font-extrabold">Métodos</h1>
+    <p class="subtitulo text-base">Rectángulos y trapecios, paso a paso</p>
   </header>
 
-  <main class="grid min-h-0 flex-1 gap-3 p-3 xl:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] xl:grid-rows-[minmax(0,1.15fr)_minmax(0,1fr)]">
+  <main class="principal grid min-h-0 flex-1 gap-3 p-3">
 
     <!-- 1. DATOS -->
     <section class="card flex min-h-0 flex-col">
