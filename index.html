@@ -13,7 +13,7 @@
 
   <!-- TÍTULO -->
   <header class="encabezado flex shrink-0 items-center gap-4 px-6">
-    <h1 class="titulo text-2xl font-extrabold">Métodos</h1>
+    <h1 class="titulo text-2xl font-extrabold">Métodos de Resolución</h1>
     <p class="subtitulo text-base">Rectángulos y trapecios, paso a paso</p>
   </header>
 
@@ -21,7 +21,7 @@
 
     <!-- 1. DATOS -->
     <section class="card flex min-h-0 flex-col">
-      <h2 class="seccion-titulo flex shrink-0 items-center gap-2 font-bold"><span class="num">1</span>Datos</h2>
+      <h2 class="seccion-titulo flex shrink-0 items-center gap-2 font-bold"><span class="num">1</span>Ingrese los datos de la función </h2>
       <form id="form" class="mt-3 grid grid-cols-6 gap-2">
         <label class="lbl col-span-6">Función f(x)
           <input id="fx" value="-x^2+4" autocomplete="off" class="inp mate" placeholder="ej: x^2 + 3x - sin(x)">
@@ -59,7 +59,7 @@
 
     <!-- 2. RESOLUCIÓN -->
     <section class="card flex min-h-0 flex-col">
-      <h2 class="seccion-titulo flex shrink-0 items-center gap-2 font-bold"><span class="num">2</span>Resolución</h2>
+      <h2 class="seccion-titulo flex shrink-0 items-center gap-2 font-bold"><span class="num">2</span>Visualice la operación (cada método)</h2>
       <div id="res" class="mt-3 flex min-h-0 flex-1 flex-col gap-3"></div>
     </section>
 
@@ -69,6 +69,12 @@
       <div id="graf" class="mt-3 grid min-h-0 flex-1 gap-3 xl:grid-cols-2 xl:grid-rows-[minmax(0,1fr)]"></div>
     </section>
   </main>
+
+   <!-- PIE DE PÁGINA -->
+  <footer class="pie-pagina">
+    <p>&copy; VUG 2026 · Métodos numéricos    Ing. Cristian Girón</p>
+    <p> Desarrollado por: Claudia Tax con mucho amor y mucho cafe 😊☕</p>
+  </footer>
 
   <script src="calculos.js"></script>
   <script src="vista.js"></script>

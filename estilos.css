@@ -86,3 +86,34 @@ html { background: var(--bg); }
 .frac > span:first-child { border-bottom: 1.5px solid currentColor; padding: 0 .25rem; }
 .anim { animation: subir .4s ease both; }
 @keyframes subir { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+.pie-pagina {
+  flex-shrink: 0;
+  padding: 16px;
+  text-align: center;
+  background-color: #1e293b;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.pie-pagina p {
+  margin: 4px 0;
+}
+
+.encabezado {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  padding: 16px;
+  text-align: center;
+  background: #1e293b;
+  color: #ffffff;
+}
+
+.encabezado .titulo,
+.encabezado .subtitulo {
+  color: inherit;
+  margin: 0;
+}
